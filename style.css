@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding: 5px;
+}
+.heading h3 {
+    margin: 0; 
+    color: white; 
+    text-align: center;
+}
+
+.heading .responsive {
+    color: grey; 
+}
+
+.heading .grid {
+    color: purple; 
+}
+
+.heading .layout {
+    color: grey; 
+}
+.grid-container {
+    display: grid;
+    gap: 4px;
+    grid-template-rows: 40px 40px auto 60px 60px 40px;
+    grid-template-columns: 1fr;
+    grid-template-areas: 'header' 'menu' 'main' 'widget' 'statistics' 'footer';
+    height: 100vh;
+    border: 1px solid black;
+    padding: 2px;
+}
+
+@media (min-width :480px) {
+    .grid-container {
+        display: grid;
+        grid-template-rows: 40px auto 80px 40px;
+        grid-template-columns: 160px auto auto;
+        grid-template-areas:
+            'header header header header header header'
+            'menu main main main main main'
+            'menu widget widget statistics statistics statistics'
+            'footer footer footer footer footer footer';
+    }
+}
+
+.header,
+.menu,
+.main,
+.widget,
+.statistics,
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+}
+
+.header {
+    grid-area: header;
+    background-color: rgb(209, 117, 223);
+}
+
+.menu {
+    grid-area: menu;
+    background-color: rgb(234, 238, 24);
+
+}
+
+.main {
+    grid-area: main;
+    background-color: rgb(106, 243, 88);
+}
+
+.widget {
+    grid-area: widget;
+    background-color: rgb(235, 128, 40);
+    width: 100%;
+}
+
+.statistics {
+    grid-area: statistics;
+    background-color: rgb(21, 166, 202);
+    width: 100%;
+}
+
+.right {
+    grid-area: right;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: rgb(209, 117, 223);
+}
